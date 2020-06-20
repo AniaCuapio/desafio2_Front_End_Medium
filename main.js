@@ -123,16 +123,35 @@ getPostsFromDb()
 
 log(postsToRender)
 
-const renderPosts = (array) => {
-    log("prueba de función de dibujar")
-    array.forEach(element =>
-      log(element));
+// const renderPosts = (array) => {
+//     log("prueba de función de dibujar")
+//     array.forEach(element =>
+//       log(element));
     
-// if (post.section.value === "popular"){
-//} 
+// // if (post.section.value === "popular"){
+// //} 
+// }
+
+// renderPosts(postsToRender)
+//  Esta funcion dibuja el html2
+const loadPage = (selector, url, callback) =>{
+  alert("prueba de botón")
+  $(selector).load(url, callback)
 }
 
-renderPosts(postsToRender)
+//  Hacer el objeto post
+const handleSaveListener =() =>{
+  $("#save-btn").click(function (e) {
+    e.preventDefault();
+    alert("prueba de botón guardar")
+    let title = $("#input-title").val()
+    let text = $("#input-text").val()
+    let author = $("#input-author").val()
+    let imgUrl = $("#input-img").val()
+    let postObject = { title, text, author, imgUrl }
+    log(postObject)
+  });
+}
 
 
 //                 $("#koders-table").find("tbody").append(`
