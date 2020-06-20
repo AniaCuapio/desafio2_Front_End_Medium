@@ -206,3 +206,18 @@ aside {
     top: 0;
 }
 }
+#Boxf{
+  box-shadow: 5px 10px 20px rgb(184, 184, 184);
+
+  border-radius: 10px;
+}
+#Boxbs{
+  box-shadow: 5px 5px 10px rgb(184, 184, 184);
+  border-style: solid 1px color rgb(121, 121, 121);
+
+  border-radius: 10px;
+}
+
+#small-logo2{
+  width: 17%;
+}
