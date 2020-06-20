@@ -1,5 +1,5 @@
 let posts = [
-    {
+  {
     "userId": 1,
     "id": 1,
     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -86,61 +86,68 @@ let posts = [
 
 let log = console.log
 
-log(typeof(posts))
+log(typeof (posts))
 
-const postData = () =>{
-    posts.forEach( post => {
-        post = { ...post, createdAt: new Date() }
-        log(post)
-        $.ajax({
-            url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/mockdata/.json",
-            method: "POST",
-            data: JSON.stringify(post),
-            success: (response) => {
-               log(response);
-            }
-        })
-     })
+const postData = () => {
+  posts.forEach(post => {
+    post = { ...post, createdAt: new Date() }
+    log(post)
+    $.ajax({
+      url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/mockdata/.json",
+      method: "POST",
+      data: JSON.stringify(post),
+      success: (response) => {
+        log(response);
+      }
+    })
+  })
 }
 
 //postData()
 
-var postsToRender =[];
+var postsToRender = [];
 
 const getPostsFromDb = () => {
-     $.get("https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/mockdata/.json",
-         function (response) {
-            $.each(response, (key, value) => {
-                // log('key: ', key)
-                // log('post value: ', value)
-                postsToRender.push({ ...value, id:key });
-                let { title, text, author, section, createdAt } = value
-            })
-        })
-    };
+  $.ajax({
+    url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/mockdata/.json",
+    success: function (response) {
+      $.each(response, (key, value) => {
+        // log('key: ', key)
+        // log('post value: ', value)
+        postsToRender.push({ ...value, id: key });
+        let { title, text, author, section, createdAt } = value
+      })
+      //renderPosts(postsToRender)
+    },
+    method: "GET",
+    async:false
+  });
+};
 
 getPostsFromDb()
 
 log(postsToRender)
 
-// const renderPosts = (array) => {
-//     log("prueba de función de dibujar")
-//     array.forEach(element =>
-//       log(element));
-    
-// // if (post.section.value === "popular"){
-// //} 
-// }
+const renderPosts = (array) => {
+  log("prueba de función de dibujar")
+  log(array)
+  array.forEach(element => {
+    log(element)
+  });
 
-// renderPosts(postsToRender)
+  //if (post.section.value === "popular"){
+  //} 
+}
+
+renderPosts(postsToRender)
 //  Esta funcion dibuja el html2
-const loadPage = (selector, url, callback) =>{
+const loadPage = (selector, url, callback) => {
   alert("prueba de botón")
   $(selector).load(url, callback)
 }
 
 //  Hacer el objeto post
-const handleSaveListener =() =>{
+const handleSaveListener = () => {
   $("#save-btn").click(function (e) {
     e.preventDefault();
     alert("prueba de botón guardar")
