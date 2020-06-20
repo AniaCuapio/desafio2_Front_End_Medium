@@ -105,14 +105,9 @@ const postData = () =>{
 
 //postData()
 
-const getPostsData = () =>{
-    
-}
-
 var postsToRender =[];
 
 const getPostsFromDb = () => {
-    console.log("prueba de funcion")
      $.get("https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/mockdata/.json",
          function (response) {
             $.each(response, (key, value) => {
@@ -128,13 +123,13 @@ getPostsFromDb()
 
 log(postsToRender)
 
-const renderPosts =(postsToRender)=>{
-    postsToRender.forEach( post => {
-log("prueba de función dibujar")
-log(post.section)
-// if (element.section.value === "popular"){
+const renderPosts = (array) => {
+    log("prueba de función de dibujar")
+    array.forEach(element =>
+      log(element));
+    
+// if (post.section.value === "popular"){
 //} 
-})
 }
 
 renderPosts(postsToRender)
