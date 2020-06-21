@@ -220,4 +220,5 @@ aside {
 
 #small-logo2{
   width: 17%;
+  filter: invert(100%);
 }

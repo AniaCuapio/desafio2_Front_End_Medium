@@ -15,7 +15,8 @@ const getPostsFromDb = () => {
         // log('key: ', key)
         // log('post value: ', value)
         postsToRender.push({ ...value, id: key });
-        let { title, text, author, section, createdAt } = value
+        // let { id, imgUrl, title, text, author, section, createdAt } = value
+        // log(value)
       })
       //renderPosts(postsToRender)
     },
@@ -27,26 +28,81 @@ const getPostsFromDb = () => {
 getPostsFromDb()
 
 log(postsToRender)
+let arrayPopularSection = []
+let arrayRecentSection = []
 
-const renderPosts = (array) => {
+const filterPosts = (array) => {
   log("prueba de función de dibujar")
   log(array)
   array.forEach(post => {
     log(post.section)
     if (post.section === "popular"){
-    log("este post se va a la seccion popular:", post)
+      arrayPopularSection.push(post)
     }
     else if(post.section === "recent"){
-    log("este post se va a seccion reciente:", post)
+      arrayRecentSection.push(post)
     }
     });
 }
 
-renderPosts(postsToRender)
+filterPosts(postsToRender)
+
+log("array recent:", arrayRecentSection)
+log("array popular:", arrayPopularSection)
+
+const printPosts=()=>{
+
+arrayRecentSection.forEach(post =>{
+  let { title, imgUrl, author, createdAt, id } = post
+  let postCard = `
+<div class="card mb-3 border-white">
+ <div class="row no-gutters flex-md-row-reverse">
+  <div class="col-8" data-id ="${id}">
+    <div class="card-body py-0">
+       <h5 class="card-title">${title}</h5>
+       <p class="card-text m-0">${author}</p>
+      <div class="row">
+        <div class="col-10">
+          <p class="card-text"><small class="text-muted">${createdAt} · 4 min read ★</small></p>
+        </div>
+        <div class="col-2 d-flex justify-content-end px-0">
+          <div class="d-md-none">
+            <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
+          </div>
+          <a class="text-dark mx-1" href="#"><i class="fas fa-ellipsis-h text-muted"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="h-100 w-100">
+      <img src="${imgUrl}" class="card-img" alt="...">
+    </div>
+  </div>
+ </div>
+</div>`
+$(".recent-section").append(postCard)
+})
+
+arrayPopularSection.forEach(post =>{
+  // let { title, imgUrl, author, createdAt, id } = post
+  // let postCard2 =` <span class="border border-bottom-0"></span>
+//   <div class="d-inline-flex mt-5">
+//   <h3 class="mr-3 text-black-50">01</h3>
+//   <h5 class="text-dark hoover-h">Stealing Secrets from Developers using Websockets
+//   </h5>
+// </div>`
+})
+
+}
+
+//printPosts()
+
+
 
 //  Esta funcion dibuja el html alternativo
 const loadPage = (selector, url, callback) => {
-  alert("prueba de botón")
+//  alert("prueba de botón")
   $(selector).load(url, callback)
 }
 
@@ -68,6 +124,8 @@ const handleSaveListener = () => {
 }
 
 const postData = (object) => {
+  object = { ...object, createdAt: new Date() }
+  log(object)
     $.ajax({
       url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/.json",
       method: "POST",
@@ -77,7 +135,6 @@ const postData = (object) => {
       }
     })
 }
-
 
 
 //                 $("#koders-table").find("tbody").append(`
