@@ -9,7 +9,7 @@ var postsToRender = [];
 
 const getPostsFromDb = () => {
   $.ajax({
-    url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/.json",
+    url: "https://ajaxclass-1ca34.firebaseio.com/medium-team2/.json",
     success: function (response) {
       $.each(response, (key, value) => {
         // log('key: ', key)
@@ -49,21 +49,25 @@ filterPosts(postsToRender)
 
 log("array recent:", arrayRecentSection)
 log("array popular:", arrayPopularSection)
+let arrayTotals = arrayPopularSection + arrayRecentSection
+
+log ("array totals:", arrayTotals)
 
 const printPosts=()=>{
 
 arrayRecentSection.forEach(post =>{
   let { title, imgUrl, author, createdAt, id } = post
   let postCard = `
-<div class="card mb-3 border-white">
+<div class="card mb-3 border-white" data-id ="${id}">
  <div class="row no-gutters flex-md-row-reverse">
   <div class="col-8" data-id ="${id}">
     <div class="card-body py-0">
        <h5 class="card-title">${title}</h5>
+       <span><i data-id="${id}" class="fas fa-times"></i></span> </p>
        <p class="card-text m-0">${author}</p>
       <div class="row">
         <div class="col-10">
-          <p class="card-text"><small class="text-muted">${createdAt} · 4 min read ★</small></p>
+          <p class="card-text"><small class="text-muted">${createdAt.toDateString()} · 4 min read ★</small></p>
         </div>
         <div class="col-2 d-flex justify-content-end px-0">
           <div class="d-md-none">
@@ -85,18 +89,62 @@ $(".recent-section").append(postCard)
 })
 
 arrayPopularSection.forEach(post =>{
-  // let { title, imgUrl, author, createdAt, id } = post
-  // let postCard2 =` <span class="border border-bottom-0"></span>
-//   <div class="d-inline-flex mt-5">
-//   <h3 class="mr-3 text-black-50">01</h3>
-//   <h5 class="text-dark hoover-h">Stealing Secrets from Developers using Websockets
-//   </h5>
-// </div>`
+  let { title, author, createdAt, id } = post
+  let postCard2 =`
+  <div class="d-inline-flex mt-5">
+    <h3 class="mr-3 text-black-50">02</h3>
+    <h5 class="text-dark hoover-h">${title}</h5>
+  </div>
+  <span class="hoover-h ml-5">${author}</span>
+  <div class="row ml-5">
+    <div class="m-0">
+    <p class="card-text"><small class="text-muted">${createdAt.toDateString()} • 14 min read</small>
+    <span class="middotDivider text-muted">★</span>
+    <span><i data-id="${id}" class="fas fa-times"></i></span> </p>
+  </div>
+</div>`
+$("#popular-container").append(postCard2)
 })
+
+
+// arrayTotals.forEach(post =>{
+// let {imgUrl, title, author, createdAt, id , text} = post
+// // log(text.slice(0, 150))
+// let cardPost3 = `
+// <div class="col-8 d-flex flex-column mt-5 pl-5">
+// <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
+// <h4 class="hoover-h">${title}</h4>
+// <p class="text-muted font-weight-light">"${text.slice(0, 150)}..."</p>
+// <div class="d-flex justify-content-start">
+//     <span class="hoover-h">${author}</span>
+//     <p class="mx-2">in</p><span class="hoover-h"> Towards Data
+//         Science</span>
+// </div>
+// <div class="row">
+//     <div class="col-6 d-flex justify-content-around">
+//         <span class="mr-2 text-muted">${createdAt.toDateString()}</span>
+//         <span class="text-muted mr-2">•</span>
+//         <span class="mr-2 text-muted">7 min read</span>
+//         <span class="text-muted">★</span>
+//     </div>
+//     <div class="col-6 d-flex justify-content-end">
+//         <i class="far fa-bookmark mx-1 hoover-h"></i>
+//         <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
+//         <span><i data-id="${id}" class="fas fa-times"></i></span></p>
+//     </div>
+// </div>
+// </div>
+// <div class="col-4 d-flex flex-column mt-5 pr-0">
+// <img class="hoover-h"
+//     src="${imgUrl}"
+//     alt="Dashboard Image">
+// </div>`
+// $("#all-container").append(cardPost3)
+// })
 
 }
 
-//printPosts()
+printPosts()
 
 
 
@@ -127,7 +175,7 @@ const postData = (object) => {
   object = { ...object, createdAt: new Date() }
   log(object)
     $.ajax({
-      url: "https://ajaxclass-1ca34.firebaseio.com/medium-equipo2/.json",
+      url: "https://ajaxclass-1ca34.firebaseio.com/medium-team2/.json",
       method: "POST",
       data: JSON.stringify(object),
       success: (response) => {
@@ -136,24 +184,4 @@ const postData = (object) => {
     })
 }
 
-
-//                 $("#koders-table").find("tbody").append(`
-//                 <tr data-koder-key='${key}'>
-//                     <td class="firstName" data-name="${name}" >${name}</td>
-//                     <td class="lastName" data-last="${lastName}">${lastName}</td>
-//                     <td class="age">${age}</td>
-//                     <td class="email">${email}</td>
-//                     <td class="date">${createdAt}</td>                    
-//                     <td class="delete">
-//                         <svg class="bi bi-x text-danger" width="3em" height="3em" viewBox="0 0 16 16"
-//                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-//                             <path fill-rule="evenodd"
-//                                 d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
-//                             <path fill-rule="evenodd"
-//                                 d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
-//                         </svg>
-//                     </td>
-//                 </tr>
-//             `)
-//             })
 //             $(".delete").click(deleteTableRow)
