@@ -1,0 +1,18 @@
+.wrapper1{
+    max-height: 130px;
+    display: flex;
+    overflow-x: auto;
+
+}
+
+.wrapper1::-webkit-scrollbar{
+    width: 0;
+}
+
+.wrapper1 .item{
+    min-width: 110px;
+    height: 110px;
+    line-height: 110px;
+    text-align: center;
+    margin-right: 2px;
+}
