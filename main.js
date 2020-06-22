@@ -108,8 +108,9 @@ arrayPopularSection.forEach(post =>{
   <span class="hoover-h ml-5">${author}</span>
   <div class="row ml-5">
     <div class="m-0">
-      <p class="card-text"><small class="text-muted">${createdAt} • 14 min read</small>
-      <span class="middotDivider text-muted">★</span>
+      <p class="card-text2"><small class="text-muted">${createdAt} · 14 min read ★</small>
+        <span class="tooltiptext2">Updated Jun 20</span>
+      </p>
       <div class="delete-btn">
         <svg class="bi bi-x" data-id ="${id}" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
