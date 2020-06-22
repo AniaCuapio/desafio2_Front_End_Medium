@@ -17,4 +17,10 @@
   text-align: center;
   margin-right: 2px;
 }
+
+.wrapper2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+}
 /*# sourceMappingURL=style.css.map */

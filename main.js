@@ -1,4 +1,4 @@
-let log = console.log
+/*let log = console.log
 
 log(typeof (posts))
 
@@ -157,3 +157,9 @@ const postData = (object) => {
 //             `)
 //             })
 //             $(".delete").click(deleteTableRow)
+*/
+
+$("#left").on("click",function(){
+  console.log("hola")
+    scrollX(0,0)
+})

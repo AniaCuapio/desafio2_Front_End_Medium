@@ -4,10 +4,10 @@
     overflow-x: auto;
 
 }
-
 .wrapper1::-webkit-scrollbar{
     width: 0;
 }
+
 
 .wrapper1 .item{
     min-width: 110px;
@@ -15,4 +15,10 @@
     line-height: 110px;
     text-align: center;
     margin-right: 2px;
+}
+
+.wrapper2{
+
+    position: sticky;
+    top: 80px;
 }
