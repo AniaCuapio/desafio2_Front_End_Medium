@@ -67,6 +67,7 @@ const printPosts=()=>{
       <div class="row">
         <div class="col-10">
           <p class="card-text"><small class="text-muted">${createdAt} · 4 min read ★</small></p>
+          <span class="tooltiptext">Updated Jun 20</span>
         </div>
         <div class="col-2 d-flex justify-content-end px-0">
           <div class="d-md-none">
@@ -100,6 +101,7 @@ $("#recent-section").append(postCard)
   <div class="row ml-5">
     <div class="m-0">
     <p class="card-text"><small class="text-muted">${createdAt} • 14 min read</small>
+    <span class="tooltiptext">Updated Jun 20</span>
     <span class="middotDivider text-muted">★</span>
     <span><i data-id="${id}" class="fas fa-times"></i></span> </p>
   </div>
@@ -125,6 +127,7 @@ let cardPost3 = `
 <div class="row">
     <div class="col-6 d-flex justify-content-around">
         <span class="mr-2 text-muted">${createdAt}</span>
+        <span class="tooltiptext">Updated Jun 20</span>
         <span class="text-muted mr-2">•</span>
         <span class="mr-2 text-muted">7 min read</span>
         <span class="text-muted">★</span>
