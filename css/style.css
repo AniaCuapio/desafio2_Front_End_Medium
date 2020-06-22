@@ -154,6 +154,7 @@ body{
 
 .hoover-h:hover{
     cursor: pointer;
+
     }
 
 h5{
@@ -220,4 +221,52 @@ aside {
 
 #small-logo2{
   width: 17%;
+}
+
+#add-rectangle{
+  background-image: url("../img/zoramusic.png");
+  max-width: 100%;
+  height: auto;
+}
+
+.card-text .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  opacity: 0.8;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 12px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.card-text:hover .tooltiptext {
+  visibility: visible;
+}
+.card-text2 .tooltiptext2 {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  opacity: 0.8;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px 10px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 12px;
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: -25px; left: -180px;
+}
+.card-text2:hover .tooltiptext2 {
+  visibility: visible;
 }
