@@ -1,3 +1,4 @@
+
 /*let log = console.log
 
 log(typeof (posts))
@@ -159,7 +160,30 @@ const postData = (object) => {
 //             $(".delete").click(deleteTableRow)
 */
 
-$("#left").on("click",function(){
-  console.log("hola")
-    scrollX(0,0)
+
+
+
+$('#toRight').click(function(){
+    var pisition = $('.wrapper_items').scrollLeft();
+    $(".wrapper_items").animate({
+        scrollLeft: pisition + 110
+    }, 400);
 })
+
+$('#toLeft').click(function(){
+  var pisition = $('.wrapper_items').scrollLeft();
+  $(".wrapper_items").animate({
+      scrollLeft: pisition - 110
+  }, 400);
+})
+
+
+var viewportHeight = window.innerHeight;
+window.addEventListener("scroll", (event) => {
+  let scrollPosition = window.scrollY;
+  console.log(window.scrollY);
+  scrollPosition > viewportHeight
+});
+
+
+

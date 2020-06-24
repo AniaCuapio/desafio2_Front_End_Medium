@@ -22,3 +22,11 @@
     position: sticky;
     top: 80px;
 }
+::-webkit-scrollbar {
+    display: none;
+}
+.wrapper_items{
+    max-height: 130px;
+    display: flex;
+    overflow-x: auto;
+}
