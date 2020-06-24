@@ -164,22 +164,41 @@
                             alt="">
                     </div>
                 </nav>
-                <nav class="nav d-flex flex-row justify-content-center align-items-center">
-                    <div>
-                        <i class="fas fa-chevron-left text-muted d-inline"></i>
+                <nav>
+                    <div class=" bg-white text-dark ">
+                        <div class="d-flex align-self-center">
+                            <svg id="toLeft" class="bi bi-chevron-left ml-5 mt-4" width="2em" height="4em"
+                                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                data-scroll-direction="left">&LeftAngleBracket;
+                                <path fill-rule="evenodd"
+                                    d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                            </svg>
+                            <div class="wrapper1 w-60 ">
+                                <div class="wrapper_items">
+                                    <div class="item text-muted"><small>HOME</small></div>
+                                    <div class="item text-muted"><small>POPULAR</small> </div>
+                                    <div class="item text-muted"><small>MOMENTUM</small> </div>
+                                    <div class="item text-muted"><small>CORONAVIRUS</small> </div>
+                                    <div class="item text-muted"><small>UNEZERO</small> </div>
+                                    <div class="item text-muted"><small>ELEMENTAL</small> </div>
+                                    <div class="item text-muted"><small>GEN</small></div>
+                                    <div class="item text-muted"><small>ZORA</small> </div>
+                                    <div class="item text-muted"><small>FORGE</small> </div>
+                                    <div class="item text-muted"><small>HUMAN</small> </div>
+                                    <div class="item text-muted"><small> MARKER</small></div>
+                                    <div class="item text-muted"><small>LEVEL</small></div>
+                                    <div class="item text-muted"><small>HEATED</small></div>
+                                    <div class="item text-muted"><small>MORE</small></div>
+                                </div>
+                            </div>
+                            <svg id="toRight" class="bi bi-chevron-right mr-5 mt-4" width="2em" height="4rem"
+                                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                data-scroll-direction="raight">&RightAngleBracket;>
+                                <path fill-rule="evenodd"
+                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </div>
                     </div>
-                    <div class="overflow-horizontal d-flex d-inline">
-                        <a class="nav-link text-muted nav-list" href="#">HOME</a>
-                        <a class="nav-link text-muted nav-list" href="#">CORONAVIRUS BLOG</a>
-                        <a class="nav-link text-muted nav-list" href="#">POPULAR</a>
-                        <a class="nav-link text-muted nav-list" href="#">ONEZERO</a>
-                        <a class="nav-link text-muted nav-list" href="#">ELEMENTAL</a>
-                        <a class="nav-link text-muted nav-list" href="#">GEN</a>
-                        <a class="nav-link text-muted nav-list" href="#">ZORA</a>
-                        <a class="nav-link text-muted nav-list" href="#">FORGE</a>
-                        <a class="nav-link text-muted nav-list" href="#">HUMAN PARTS</a>
-                    </div>
-                    <div class="pl-2"><i class="fas fa-chevron-right text-muted d-inline"></i></div>
                 </nav>
             </div>
         </div>
@@ -331,13 +350,7 @@
                         <div>
                             <h6 class="text-muted font-weight-light pt-5 pb-4">POPULAR ON MEDIUM</h6>
                         </div>
-                        <div class="col-2 col-md-1">
-                            <h3 class="mr-3 text-black-50">01</h3>
-                            <h3 class="mr-3 text-black-50">02</h3>
-                            <h3 class="mr-3 text-black-50">03</h3>
-                            <h3 class="mr-3 text-black-50">04</h3>
-                        </div>
-                        <div class="col-10 col-md-4 ">
+                        <div class="col-12 col-md-4 ">
                             <div id="popular-section"></div>
                             <!-- Tarjetas POPULAR -->
                         </div>
@@ -364,187 +377,6 @@
     </div>
 
 
-
-    <!-- 
-        <div id="form-container" class="container p-3">
-            <div class="row">
-                <div class="col-12 col-md-5">
-
-                </div>
-                <div class="col-12 col-md-4 recent-section">
-                    Aquí van los posts recent 
-    </div>
-    <div class="col-12 col-md-3">
-        <div class="d-none d-md-block">
-
-        </div>
-    </div>
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-end">
-                <p class="card-text mb-0" id="text-editors"><small>SEE EDITOR´S PICKS ></small></p>
-            </div>
-            <div class="col-12">
-                <hr class="line">
-            </div>
-        </div>
-    </div>
-
-    <div class="row u-flex u-marginTop48">
-        <div class="col-12 col-md-7 d-flex flex-column mt-3">
-            <article class="border bg-light text-dark p-5">
-                <h3>A new way to control your experience</h3>
-                <p>Hide content from authors or publications on your Medium homepage and in emails
-                    by
-                    clicking the more icon (…) and selecting mute.</p>
-                <button class="btn btn-success">Learn more</button>
-            </article>
-            <div class="wrapper mt-5">
-                <article class="row">
-                    <div class="col-8 d-flex flex-column pl-5">
-
-                        <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
-                        <section id="all-container">
-
-                        </section>
-                        Aquí van los posts TODOS 
-    <h4 class="hoover-h">Ninety Thousand Dead and Counting</h4>
-    <p class="text-muted font-weight-light">"Trump’s Misdirecting Away the
-        Greatest
-        Leadership Failure in the World. It’s Working."</p>
-    <div class="d-flex justify-content-start">
-        <span class="hoover-h">umair haque </span>
-        <p class="mx-2">in</p><span class="hoover-h"> Eudaimonia and Co</span>
-    </div>
-    <div class="row">
-        <div class="col-6 d-flex justify-content-around">
-            <span class="text-muted">May 19</span>
-            <span class="text-muted">•</span>
-            <span class="text-muted">9 min read</span>
-            <span class="text-muted">★</span>
-        </div>
-        <div class="col-6 d-flex justify-content-end">
-            <i class="far fa-bookmark mx-1 hoover-h"></i>
-            <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
-        </div>
-    </div>
-    </div>
-    <div class="col-4 d-flex flex-column mt-5 pr-0">
-        <img class="hoover-h" src="https://cdn-images-1.medium.com/fit/c/152/156/1*w5zKSWdhjSwAewIDjWut5g.jpeg"
-            alt="Trump Image">
-    </div>
-
-
-    <div class="col-8 d-flex flex-column mt-5 pl-5">
-        <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
-        <h4 class="hoover-h">What's new in YOLOv4</h4>
-        <p class="text-muted font-weight-light">"YOLO is a real-time object
-            recognition
-            system that can recognize multiple objects in a single frame — and it
-            just
-            got better!</p>
-        <div class="d-flex justify-content-start">
-            <span class="hoover-h">Roman Orac</span>
-            <p class="mx-2">in</p><span class="hoover-h">Towards Data Science</span>
-        </div>
-        <div class="row">
-            <div class="col-6 d-flex justify-content-around">
-                <span class="mr-2 text-muted">May 19</span>
-                <span class="text-muted mr-2">•</span>
-                <span class="mr-2 text-muted">3 min read</span>
-                <span class="text-muted">★</span>
-            </div>
-            <div class="col-6 d-flex justify-content-end">
-                <i class="far fa-bookmark mx-1 hoover-h"></i>
-                <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-4 d-flex flex-column mt-5 pr-0">
-        <img class="hoover-h" src="https://cdn-images-1.medium.com/fit/c/152/156/1*5_cg0ClDMJg1AQl4tRyYNQ.png"
-            alt="YOLOv4 Image">
-    </div>
-    <div class="col-8 d-flex flex-column mt-5 pl-5">
-        <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
-        <h4 class="hoover-h">4 Things Emotionally Secure People Don’t Do in
-            Relationships</h4>
-        <p class="text-muted font-weight-light">Secure attachment isn’t addictive.
-        </p>
-        <div class="d-flex justify-content-start">
-            <span class="hoover-h">Kathrine Meraki</span>
-            <p class="mx-2">in</p><span class="hoover-h">Change Your Mind Change
-                Your
-                Life</span>
-        </div>
-        <div class="row">
-            <div class="col-6 d-flex justify-content-around">
-                <span class="mr-2 text-muted">Apr 29</span>
-                <span class="text-muted mr-2">•</span>
-                <span class="mr-2 text-muted">3 min read</span>
-                <span class="text-muted">★</span>
-            </div>
-            <div class="col-6 d-flex justify-content-end">
-                <i class="far fa-bookmark mx-1 hoover-h"></i>
-                <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-4 d-flex flex-column mt-5 pr-0">
-        <img class="hoover-h" src="https://cdn-images-1.medium.com/fit/c/152/156/1*W5AWlEvHl8eSmoN0cjJKoQ.jpeg"
-            alt="YOLOv4 Image">
-    </div>
-    <div class="col-8 d-flex flex-column mt-5 pl-5">
-        <h6 class="text-muted font-weight-light">POPULAR ON MEDIUM</h6>
-        <h4 class="hoover-h">10 Things I Learned About My Husband That Made Me A
-            Better
-            Wife</h4>
-        <p class="text-muted font-weight-light">#8 He cannot read my mind.</p>
-        <div class="d-flex justify-content-start">
-            <span class="hoover-h">The Good Men Project</span>
-            <p class="mx-2">in</p><span class="hoover-h">Hello,Love</span>
-        </div>
-        <div class="row">
-            <div class="col-6 d-flex justify-content-around">
-                <span class="mr-2 text-muted">Apr 29</span>
-                <span class="text-muted mr-2">•</span>
-                <span class="mr-2 text-muted">3 min read</span>
-                <span class="text-muted">★</span>
-            </div>
-            <div class="col-6 d-flex justify-content-end">
-                <i class="far fa-bookmark mx-1 hoover-h"></i>
-                <i class="fas fa-ellipsis-h text-muted mx-1 hoover-h"></i>
-            </div>
-        </div>
-    </div>
-    <div class="col-4 d-flex flex-column mt-5 pr-0">
-        <img class="hoover-h" src="https://cdn-images-1.medium.com/fit/c/152/156/0*659NtRcTMRCpLDIc.jpg"
-            alt="YOLOv4 Image">
-    </div>
-    </div>
-    </article>
-    </div>
-
-
-    <div>
-        <div class="col-12 col-md-5 mt-3 d-flex flex-column">
-            <aside>
-                <h4 class="pt-5 pb-4">Popular on Medium</h4>
-                <section id="popular-container"></section>
-                <div class="border-top">
-                    <nav class="nav d-flex flex-row justify-content-left">
-                        <a class="nav-link text-muted" href="#">Help</a>
-                        <a class="nav-link text-muted" href="#">Status</a>
-                        <a class="nav-link text-muted" href="#">Writers</a>
-                        <a class="nav-link text-muted" href="#">Blog</a>
-                        <a class="nav-link text-muted" href="#">Careers</a>
-                        <a class="nav-link text-muted" href="#">Privacy</a>
-                        <a class="nav-link text-muted" href="#">Terms</a>
-                        <a class="nav-link text-muted" href="#">About</a>
-                    </nav>
-                </div>
-            </aside>
-        </div>
-    </div> -->
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
