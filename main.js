@@ -55,42 +55,7 @@ const printPosts = () => {
 
   printFirstPost()
 
-  for (let i = 0; i < 3; i++) {
-    let post = arrayRecentSection[i];
-    let { title, imgUrl, author, createdAt, id } = post
-    let postCard = `
-<div class="card mb-3 border-white" data-id ="${id}">
- <div class="row no-gutters ">
-  <div class="col-8" data-id ="${id}">
-    <div class="card-body py-0">
-       <h5 class="card-title">${title}</h5>
-       <p class="card-text m-0">${author}</p>
-      <div class="row">
-        <div class="col-10">
-          <p class="card-text"><small class="text-muted">${createdAt} · 4 min read ★</small></p>
-          <span class="tooltiptext">Updated Jun 20</span>
-        </div>
-        <div class="col-2 d-flex justify-content-end px-0">
-          <div class="d-md-none">
-            <a class="text-dark mx-1" href="#"><i class="far fa-bookmark"></i></a>
-          </div>
-          <a class="text-dark mx-1" href="#"><i class="fas fa-ellipsis-h text-muted"></i></a>
-          <a class="text-dark mx-1" href="#"><i data-id="${id}" class="fas fa-times"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-  <div class="col-4">
-    <div class="h-100 w-100">
-      <img src="${imgUrl}" class="card-img" alt="...">
-    </div>
-  </div>
-  </div>
- </div>
-</div>`
-    $("#recent-section").append(postCard)
-  }
+
   for (let i = 0; i < 5; i++) {
     let post = arrayPopularSection[i];
     let { title, author, createdAt, id } = post
@@ -193,6 +158,67 @@ const printPosts = () => {
   $(".delete-btn").click(prueba)
 }
 
+const printMiddlePosts=()=>{
+  for (let i = 1; i = 3; i++) {
+    let post = arrayRecentSection[i];
+    let { title, imgUrl, author, createdAt, id, text } = post
+    let postCard = `
+    <div class="card-post-hide w-100 h-100 d-none">
+    <h5>Publication muted</h5>
+</div>
+<div class="post-body">
+    <div class="row mb-2">
+        <div class="col-4 w-100 order-1 order-md-0">
+            <img src="${imgUrl}" alt="image">
+        </div>
+        <div class="col-8 order-0">
+            
+            <a href= "" class="font-weight-bolder mb-3">${title}</a>
+            <p><a href="" class="text-muted">${text.slice(0,20)}</a></p>
+            <div class="row">
+                <div class="col-10 author">
+                    <a href="#" data-placement="top" data-toggle="popover"
+                        data-popover-content="#popover-componentUser" data-trigger="hover">${author}</a>
+                    <span>in</span>
+                    <a href="#" data-placement="bottom" data-toggle="popover"
+                        data-popover-content="#popover-componentUser" data-trigger="hover"></a>
+                    <p>${createdAt}
+                        <svg class="bi bi-dot" width="1em" height="1em" viewBox="0 0 16 16"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                        <span data-toggle="tooltip" title="Updated ${createdAt}" data-placement="top" data-trigger="hover">4 min read</span>
+                        <svg class="bi bi-star-fill" width=".7em" height=".7em" viewBox="0 0 16 16"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                        </svg>
+                    </p>
+                </div>
+                <div class="col-2">
+                    <a class="popover-show" data-action-value="" tabindex="0" data-trigger="focus" role="button" data-toggle="popover" data-placement="bottom" data-popover-content='#popover-component'>
+                        <span>
+                            <svg width="25" height="25">
+                                <path
+                                    d="M5 12.5c0 .552.195 1.023.586 1.414.39.39.862.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414A1.927 1.927 0 0 0 7 10.5c-.552 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.617 0c0 .552.196 1.023.586 1.414.391.39.863.586 1.414.586.552 0 1.023-.195 1.414-.586.39-.39.586-.862.586-1.414 0-.552-.195-1.023-.586-1.414a1.927 1.927 0 0 0-1.414-.586c-.551 0-1.023.195-1.414.586-.39.39-.586.862-.586 1.414zm5.6 0c0 .552.195 1.023.586 1.414.39.39.868.586 1.432.586.551 0 1.023-.195 1.413-.586.391-.39.587-.862.587-1.414 0-.552-.196-1.023-.587-1.414a1.927 1.927 0 0 0-1.413-.586c-.565 0-1.042.195-1.432.586-.39.39-.586.862-.587 1.414z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </span>
+                    </a>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`
+    $("#rs2").append(postCard)
+  }
+}
+
+
+
 
 const printFirstPost=()=>{
   let firstPost= arrayRecentSection[0]
@@ -240,6 +266,8 @@ const printFirstPost=()=>{
 }
 
 printFirstPost()
+
+printMiddlePosts()
 
 const prueba = (e) => {
   e.stopPropagation();
